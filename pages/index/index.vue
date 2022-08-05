@@ -9,43 +9,48 @@
 		</shopro-empty>
 
 		<view v-else-if="isConnected && isRefresh" class="content-box">
+			<!-- 选择城市 -->
 			<!-- 导航栏 -->
 			<home-head v-if="headSwiperList && headSwiperList.length" :isScorll="isScorll" borderRadius="0"
-				:navTitle="initShop.name" :list="headSwiperList"></home-head>
+				:navTitle="'闲鸭'||initShop.name" :list="headSwiperList"></home-head>
+			<!-- 固定大模块 -->
+			<xy-big-grid></xy-big-grid>
 			<!-- 自定义模块 -->
 			<view class="template-box">
 				<block v-for="(item, index) in homeTemplate" :key="item.id">
 					<!-- 轮播 -->
-					<sh-banner v-if="item.type === 'banner' && index !== 0" :Px="item.content.x" :Py="item.content.y"
+					<!-- <sh-banner v-if="item.type === 'banner' && index !== 0" :Px="item.content.x" :Py="item.content.y"
 						:borderRadius="item.content.radius" :height="item.content.height" :list="item.content.list">
-					</sh-banner>
+					</sh-banner> -->
 
+					
+					
 					<!-- 搜索 -->
-					<sh-search v-if="item.type === 'search'"></sh-search>
+					<!-- <sh-search v-if="item.type === 'search'"></sh-search> -->
 
 					<!-- 滑动宫格 -->
-					<sh-grid-swiper v-if="item.type === 'menu'" :list="item.content.list"
-						:oneRowNum="item.content.style"></sh-grid-swiper>
+					<!-- <sh-grid-swiper v-if="item.type === 'menu'" :list="item.content.list"
+						:oneRowNum="item.content.style"></sh-grid-swiper> -->
 
 					<!-- 推荐商品 -->
-					<sh-hot-goods v-if="item.type === 'goods-list' || item.type === 'goods-group'"
-						:detail="item.content"></sh-hot-goods>
+					<!-- <sh-hot-goods v-if="item.type === 'goods-list' || item.type === 'goods-group'"
+						:detail="item.content"></sh-hot-goods> -->
 					<!-- 广告魔方 -->
-					<sh-adv v-if="item.type === 'adv'" :detail="item.content"></sh-adv>
+					<!-- <sh-adv v-if="item.type === 'adv'" :detail="item.content"></sh-adv> -->
 					<!-- 优惠券 -->
-					<sh-coupon v-if="item.type === 'coupons'" :detail="item.content"></sh-coupon>
+					<!-- <sh-coupon v-if="item.type === 'coupons'" :detail="item.content"></sh-coupon> -->
 					<!-- 秒杀-->
-					<sh-seckill v-if="item.type === 'seckill'" :detail="item.content"></sh-seckill>
+					<!-- <sh-seckill v-if="item.type === 'seckill'" :detail="item.content"></sh-seckill> -->
 					<!-- 拼团 -->
-					<sh-groupon v-if="item.type === 'groupon'" :detail="item.content"></sh-groupon>
+					<!-- <sh-groupon v-if="item.type === 'groupon'" :detail="item.content"></sh-groupon> -->
 					<!-- 富文本 -->
-					<sh-richtext v-if="item.type === 'rich-text'" :richId="item.content.id"></sh-richtext>
+					<!-- <sh-richtext v-if="item.type === 'rich-text'" :richId="item.content.id"></sh-richtext> -->
 					<!-- 功能标题 -->
-					<sh-title-card v-if="item.type === 'title-block'" :title="item.content.name"
-						:bgImage="item.content.image" :titleColor="item.content.color"></sh-title-card>
+					<!-- <sh-title-card v-if="item.type === 'title-block'" :title="item.content.name"
+						:bgImage="item.content.image" :titleColor="item.content.color"></sh-title-card> -->
 					<!-- 直播 -->
 					<!-- #ifdef MP-WEIXIN -->
-					<sh-live v-if="item.type === 'live' && HAS_LIVE" :detail="item.content"></sh-live>
+					<!-- <sh-live v-if="item.type === 'live' && HAS_LIVE" :detail="item.content"></sh-live> -->
 					<!-- #endif -->
 				</block>
 			</view>
@@ -58,7 +63,7 @@
 			<!-- 登录提示 -->
 			<shopro-auth-modal></shopro-auth-modal>
 			<!-- 悬浮按钮 -->
-			<shopro-float-btn></shopro-float-btn>
+			<!-- <shopro-float-btn></shopro-float-btn> -->
 			<!-- 连续弹窗提醒 -->
 			<shopro-notice-modal v-if="!showPrivacy && isLogin"></shopro-notice-modal>
 			<!-- 隐私协议 -->
@@ -85,6 +90,7 @@
 	import shTitleCard from './components/sh-title-card.vue';
 	import shSearch from './components/sh-search.vue';
 	import shCategoryTabs from './components/sh-category-tabs.vue';
+	import xyBigGrid from './components/xy-big-grid.vue';
 
 	import privacyModal from './index/privacy-modal.vue';
 	import homeHead from './index/home-head.vue';
@@ -95,6 +101,7 @@
 	// #endif
 
 	import { mapMutations, mapActions, mapState, mapGetters } from 'vuex';
+import XyBigGrid from './components/xy-big-grid.vue';
 	export default {
 		components: {
 			shBanner,
@@ -108,12 +115,14 @@
 			shTitleCard,
 			shSearch,
 			shCategoryTabs,
+			xyBigGrid,
 
 			privacyModal,
 			homeHead,
 
 			// #ifdef MP-WEIXIN
-			shLive
+			shLive,
+XyBigGrid
 			// #endif
 		},
 		data() {
@@ -163,7 +172,7 @@
 		onHide() {
 			this.enable = false;
 		},
-		onLoad() {
+		async onLoad() {
 			// #ifdef APP-VUE
 			// app隐私协议弹窗
 			if (!plus.runtime.isAgreePrivacy()) {

@@ -1,0 +1,209 @@
+/**
+ * @author zouch
+ */
+ .flex{
+    display: flex;
+}
+.flex-end{
+    display: flex;
+    justify-content: flex-end;
+}
+.flex-start{
+    display: flex;
+    justify-content: flex-start;
+}
+.flex-sc{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.flex-sb{
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-sa{
+    display: flex;
+    justify-content: space-around;
+}
+.flex-cc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-sbc{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-sac{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.flex-dsbc{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-dsac{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.flex-dcc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-auto{
+    flex: auto;
+}
+.flex-1{
+    flex: 1;
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
+.flex-after{
+    &:after {
+        content: "";
+        flex: auto;
+      }
+}
+.no-wrap{
+    white-space: nowrap;
+}
+
+.text-l{
+    text-align: left;
+}
+.text-c{
+    text-align: center;
+}
+.text-r{
+    text-align: right;
+}
+
+.font-b{
+    font-weight: bold;
+    font-size: 28rpx;
+}
+.font-600{
+    font-weight: 600;
+}
+
+.font-n{
+    font-weight: normal;
+}
+
+@for $i from 6 to 20 {
+    .font#{$i*2} { //12px~40px
+        font-size: $i * 4rpx;
+    }
+}
+
+@for $i from 1 to 20 {
+    .mt#{$i*5} { 
+        margin-top: $i*10rpx;
+    }
+    .mb#{$i*5} { 
+        margin-bottom: $i*10rpx;
+    }
+    .ml#{$i*5} { 
+        margin-left: $i*10rpx;
+    }
+    .mr#{$i*5} { 
+        margin-right: $i*10rpx;
+    }
+    .pt#{$i*5} { 
+        padding-top: $i*10rpx;
+    }
+    .pb#{$i*5} { 
+        padding-bottom: $i*10rpx;
+    }
+    .pl#{$i*5} { 
+        padding-left: $i*10rpx;
+    }
+    .pr#{$i*5} { 
+        padding-right: $i*10rpx;
+    }
+}
+
+.m-c{ //主题色
+    color: #297DE4;
+}
+.c-1{
+    color: #E62C3A;
+}
+.c-2{
+    color: #ED862B;
+}
+.c-3{
+    color: #1A945F;
+}
+
+.m-bc{
+    background-color: #297DE4;
+}
+.m-bc-1{
+    background-color: #E62C3A;
+}
+.m-bc-2{
+    background-color: #ED862B;
+}
+.m-bc-3{
+    background-color: #1A945F;
+}
+.m-bc-fff{
+    background-color: #fff;
+}
+
+.c-333{
+    color: #333;
+}
+.c-666{
+    color: #666;
+}
+.c-999{
+    color: #999;
+}
+.c-fff{
+    color: #fff;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.po-re{
+    position: relative;
+}
+.po-ab{
+    position: absolute;
+}
+
+.com-b{
+    border-bottom: 1px solid #e4e7ed;
+}
+
+.com-br{
+    border-radius: 10rpx;
+}
+
+.ellipsis{
+    width: 100%;
+    display: -webkit-box;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+ .m-auto{
+    margin: 0 auto;
+ }

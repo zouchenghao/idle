@@ -1,20 +1,26 @@
 <template>
 	<!-- 首页标题栏，轮播图整合插件 -->
 	<view class="banner-swiper-wrap u-m-b-10">
+		<!-- 城市选择 -->
+		<view class="city-select m-bc-fff" style="padding: 10rpx 20rpx">
+			{{currentCity}}
+			<u-icon name="arrow-down pl10"></u-icon>
+		</view>
 		<!-- 标题栏 -->
 		<view class="u-navbar u-navbar-fixed" :style="[navbarStyle]">
 			<view class="u-status-bar" :style="{ height: statusBarHeight + 'px' }"></view>
 			<view class="u-navbar-inner" :style="[navbarInnerStyle]">
-				<view class="u-back-wrap">
+				<!-- <view class="u-back-wrap">
 					<view class="u-icon-wrap u-back-text u-line-1" :style="[navTitleStyle]">{{ navTitle || '' }}</view>
 				</view>
 				<view hover-class="hover-search" class="search-box u-flex u-row-center u-col-center u-m-r-30" @tap="$Router.push('/pages/public/search')">
 					<view class="u-iconfont uicon-search" style="color: #fff"></view>
-				</view>
+				</view> -->
+				<sh-search ></sh-search>
 			</view>
 		</view>
 		<!-- 轮播组件 -->
-		<swiper class="screen-swiper square-dot" @change="onChange" style="height: 520rpx" :indicator-dots="true" :circular="true" :autoplay="true" interval="5000" duration="500">
+		<swiper class="screen-swiper square-dot" @change="onChange" style="height: 440rpx;" :indicator-dots="true" :circular="true" :autoplay="true" interval="5000" duration="500">
 			<swiper-item v-for="(item, index) in list" :key="index" @tap="onSwiper(index)"><image :src="item.image" mode="aspectFill"></image></swiper-item>
 		</swiper>
 	</view>
@@ -33,10 +39,12 @@ menuButtonInfo = uni.getMenuButtonBoundingClientRect();
  * @property {String} mode 指示器模式
  * @property {String} navTitle 项目名称
  */
+import shSearch from '../components/sh-search.vue';
 export default {
-	components: {},
+	components: {shSearch},
 	data() {
 		return {
+			currentCity:'合肥市',
 			navBgImage: '',
 			changeNavBackground: false,
 			swiperCur: 0,
@@ -57,7 +65,7 @@ export default {
 		},
 		navTitle: {
 			type: String,
-			default: 'Shopro商城'
+			default: '闲鸭'
 		},
 		navTitleStyle: {
 			type: Object,
@@ -145,11 +153,11 @@ export default {
 }
 
 .u-navbar-fixed {
-	position: fixed;
-	left: 0;
-	right: 0;
-	top: 0;
-	z-index: 991;
+	// position: fixed;
+	// left: 0;
+	// right: 0;
+	// top: 60rpx;
+	// z-index: 991;
 }
 
 .u-status-bar {

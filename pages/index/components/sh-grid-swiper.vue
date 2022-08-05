@@ -30,7 +30,6 @@
 				<text :class="categoryCurrent === index ? 'category-dot-active' : 'category-dot'" v-for="(dot, index) in newList.length" :key="index"></text>
 			</view>
 		</view>
-		</view>
 	</view>
 </template>
 
