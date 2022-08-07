@@ -20,14 +20,15 @@
 			</view>
 
 			<slot name="cardBottom">
-				<view class="u-flex u-col-center u-row-between">
+				<view class="flex-sb">
 					<view class="price-box">
 						<view class="price u-m-b-10">{{ price }}</view>
-						<view class="origin-price">￥{{ originPrice }}</view>
+						<!-- <view class="origin-price">￥{{ originPrice }}</view> -->
 					</view>
+					<view>4.3km</view>
 					<!-- 加入购物车 -->
-					<view class="cart-box">
-						<!-- 单规格 -->
+					<!-- <view class="cart-box">
+						<!== 单规格 ==>
 						<view class="" v-if="!detail.is_sku">
 							<button class="u-reset-button cart-btn u-flex u-col-center u-row-center"
 								v-if="!isCart(detail.id)" @tap.stop="addCart(detail.sku_price[0])">
@@ -40,12 +41,12 @@
 									@change="onChangeNum($event, detail.sku_price[0])"></u-number-box>
 							</view>
 						</view>
-						<!-- 多规格 -->
+						<!== 多规格 ==>
 						<button class="u-reset-button item-btn cart-btn  u-flex u-col-center u-row-center"
 							@tap.stop="selSku(detail)" v-else>
 							<view class="u-iconfont uicon-shopping-cart-fill" style="color: #fff;"></view>
 						</button>
-					</view>
+					</view> -->
 				</view>
 			</slot>
 		</view>

@@ -9,14 +9,15 @@
 			"aliasPath": "/", //对于h5端你必须在首页加上aliasPath并设置为/
 			"style": {
 				"navigationBarTitleText": "首页",
-				"navigationBarTextStyle": "white",
-				"enablePullDownRefresh": true,
-				"navigationStyle": "custom",
-				"mp-alipay": {
-					"transparentTitle": "always",
-					"titlePenetrate": "YES",
-					"allowsBounceVertical": "NO"
-				}
+				"navigationBarBackgroundColor": "#eecc89"
+				// "navigationBarTextStyle": "#a8700d",
+				// "enablePullDownRefresh": true,
+				// "navigationStyle": "custom",
+				// "mp-alipay": {
+				// 	"transparentTitle": "always",
+				// 	"titlePenetrate": "YES",
+				// 	"allowsBounceVertical": "NO"
+				// }
 			},
 			"meta": {
 				"auth": false, //需要登录
@@ -65,7 +66,7 @@
 			}
 		},
 		{
-			"path": "pages/index/view",
+			"path": "pages/index/publish",
 			"name": "view",
 			"style": {
 				"navigationBarTitleText": "",
@@ -75,12 +76,13 @@
 			"meta": {
 				"auth": false,
 				"async": true,
-				"title": "自定义页面",
+				"title": "发布",
 				"group": "商城"
 			}
 		}
 	],
-	"subPackages": [{
+	"subPackages": [
+		{
 			"root": "pages/activity",
 			"pages": [{
 					"path": "sign/index",
@@ -621,6 +623,17 @@
 		{
 			"root": "pages/public",
 			"pages": [{
+				"path": "city-select",
+				"style": {
+					"navigationBarTitleText": "选择城市"
+				},
+				"meta": {
+					"auth": false,
+					"async": true,
+					"title": "选择城市",
+					"group": "通用"
+				}
+			},{
 					"path": "faq",
 					"style": {
 						"navigationBarTitleText": "常见问题"
@@ -906,7 +919,7 @@
 				"selectedIconPath": "/static/images/tabbar/tabbar_category1.png"
 			},
 			{
-				"pagePath": "pages/index/category",
+				"pagePath": "pages/index/publish",
 				"text": "发布",
 				"iconPath": "static/images/tabbar/add1.png",
 				"selectedIconPath": "/static/images/tabbar/add1.png"

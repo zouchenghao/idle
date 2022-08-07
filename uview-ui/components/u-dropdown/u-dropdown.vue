@@ -180,6 +180,7 @@ export default {
 		},
 		// 点击菜单
 		menuClick(index) {
+			console.log('menuClick',index)
 			// 判断是否被禁用
 			if (this.menuList[index].disabled) return;
 			// 如果点击时的索引和当前激活项索引相同，意味着点击了激活项，需要收起下拉菜单
