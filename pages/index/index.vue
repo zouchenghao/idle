@@ -19,14 +19,14 @@
         v-if="headSwiperList && headSwiperList.length"
         :isScorll="isScorll"
         borderRadius="0"
-        :navTitle="'闲鸭' || initShop.name"
+        :navTitle="initShop.name"
         :list="headSwiperList"
       ></home-head>
       <!-- 固定大模块 -->
-      <xy-big-grid></xy-big-grid>
+      <!-- <xy-big-grid></xy-big-grid> -->
       <!-- 自定义模块 -->
-      <view class="template-box" style="display: none">
-        <block v-for="(item, index) in homeTemplate" :key="item.id">
+      <!-- <view class="template-box">
+        <block v-for="(item, index) in homeTemplate" :key="item.id"> -->
           <!-- 轮播 -->
           <!-- <sh-banner v-if="item.type === 'banner' && index !== 0" :Px="item.content.x" :Py="item.content.y"
 						:borderRadius="item.content.radius" :height="item.content.height" :list="item.content.list">
@@ -59,8 +59,8 @@
           <!-- #ifdef MP-WEIXIN -->
           <!-- <sh-live v-if="item.type === 'live' && HAS_LIVE" :detail="item.content"></sh-live> -->
           <!-- #endif -->
-        </block>
-      </view>
+        <!-- </block>
+      </view> -->
 
       <!-- 分类选项卡 styleType 1 瀑布流 2 正常流-->
       <sh-category-tabs

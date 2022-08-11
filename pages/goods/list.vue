@@ -9,7 +9,8 @@
 				</view>
 			</shopro-navbar>
 			<!-- 筛选栏 -->
-			<sh-filter @change="onFilter"></sh-filter>
+			<!-- <sh-filter @change="onFilter"></sh-filter> -->
+			<xy-filter @change="onFilter"></xy-filter>
 		</view>
 
 		<view class="u-waterfall u-p-16" v-if="!isEmpty">
@@ -58,12 +59,14 @@
 
 <script>
 import shFilter from './components/sh-filter.vue';
+import xyFilter from "../index/components/xy-filter.vue";
 import { mapMutations, mapActions, mapState } from 'vuex';
 let systemInfo = uni.getSystemInfoSync();
 let historyTag = uni.getStorageSync('searchHistoryArr') ? JSON.parse(uni.getStorageSync('searchHistoryArr')) : [];
 export default {
 	components: {
-		shFilter
+		shFilter,
+		xyFilter
 	},
 	data() {
 		return {

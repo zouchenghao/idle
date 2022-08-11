@@ -162,6 +162,7 @@ export default {
       this.params.activeSelectPriceArea = "";
     },
     closeDropdown() {
+      this.$emit('change',this.params)
       this.$refs.uDropdown.close();
     },
     sortChange(e) {

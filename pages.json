@@ -26,15 +26,27 @@
 				"group": "商城" //分组
 			}
 		},
+		// {
+		// 	"path": "pages/index/category",
+		// 	"style": {
+		// 		"navigationBarTitleText": "分类"
+		// 	},
+		// 	"meta": {
+		// 		"auth": false,
+		// 		"async": true,
+		// 		"title": "分类",
+		// 		"group": "商城"
+		// 	}
+		// },
 		{
-			"path": "pages/index/category",
+			"path": "pages/index/posts",
 			"style": {
-				"navigationBarTitleText": "分类"
+				"navigationBarTitleText": "帖子"
 			},
 			"meta": {
 				"auth": false,
 				"async": true,
-				"title": "分类",
+				"title": "帖子",
 				"group": "商城"
 			}
 		},
@@ -69,7 +81,7 @@
 			"path": "pages/index/publish",
 			"name": "view",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationBarTitleText": "发布",
 				"enablePullDownRefresh": true
 
 			},
@@ -666,7 +678,7 @@
 
 					},
 					"meta": {
-						"auth": true,
+						"auth": false,
 						"async": true,
 						"title": "客服",
 						"group": "通用"
@@ -913,8 +925,8 @@
 				"selectedIconPath": "/static/images/tabbar/tabbar_home1.png"
 			},
 			{
-				"pagePath": "pages/index/category",
-				"text": "生活需求",
+				"pagePath": "pages/index/posts",
+				"text": "帖子",
 				"iconPath": "static/images/tabbar/tabbar_category.png",
 				"selectedIconPath": "/static/images/tabbar/tabbar_category1.png"
 			},
